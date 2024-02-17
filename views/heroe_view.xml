@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="heroe_tree_view">
+            <field name="name">heroe.tree</field>
+            <field name="model">heroes.heroe</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre" string="Nombre"/>
+                    <field name="apellidos" string="Apellidos"/>
+                    <field name="nombreCompleto" string="Nombre completo"/>
+                    <field name="nombreHeroe" string="Nombre del heroe"/>
+                    <field name="id_persona" string="Trabajador"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="heroe_form_view">
+            <field name="name">heroe.form</field>
+            <field name="model">heroes.heroe</field>
+            <field name="arch" type="xml">
+                <form string="Formulario heroes">
+                    <sheet>
+                        <group>
+                            <field name="nombre" string="Nombre"/>
+                            <field name="apellidos" string="Apellidos"/>
+                            <field name="nombreCompleto" string="Nombre completo"/>
+                            <field name="nombreHeroe" string="Nombre del heroe"/>
+                            <field name="id_persona" string="Trabajador"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="heroe_search_view">
+            <field name="name">heroe.search</field>
+            <field name="model">heroes.heroe</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" string="Nombre"/>
+                    <field name="apellidos" string="Apellidos"/>
+                    <field name="nombreHeroe" string="Nombre del heroe"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="heroes.heroe_action_window">
+            <field name="name">Listado de Heroes</field>
+            <field name="res_model">heroes.heroe</field>
+            <field name="view_mode">tree,form,search</field>
+        </record>
+
+        <menuitem name="Insertar Super Héroe" id="heroes.menu_root" action="heroes.heroe_action_window"/>
+
+    </data>
+</odoo>

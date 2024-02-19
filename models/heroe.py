@@ -10,7 +10,7 @@ class Heroe(models.Model):
     apellidos= fields.Char(string='Apellidos',required=True)
     nombreCompleto= fields.Char(string='Nombre Completo', compute='_nombre_completo')
     nombreHeroe= fields.Char(string='Heroe',required=True)
-    id_persona= fields.Many2one('res.users',  string='Trabajador')
+    id_persona= fields.Many2one('res.users',  string='Trabajador', ondelete='set null')
     @api.depends('nombre', 'apellidos')
     def _nombre_completo(self):
         for heroe in self:
